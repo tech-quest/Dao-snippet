@@ -23,8 +23,8 @@ $email = $_SESSION['formInputs']['email'] ?? '';
     <div class="w-60 m-auto text-center">
       <h2 class="text-2xl pb-5">会員登録</h2>
 
-      <?php foreach ($errors as $error) : ?>
-        <p class="text-red-600"><?php echo $error ?></p>
+      <?php foreach ($errors as $error): ?>
+        <p class="text-red-600"><?php echo $error; ?></p>
       <?php endforeach; ?>
 
       <form action="./signup_complete.php" method="POST">
