@@ -11,9 +11,6 @@ final class UserDao
     const TABLE_NAME = 'users';
     private $pdo;
 
-    /**
-     * コンストラクタ
-     */
     public function __construct()
     {
         try {
