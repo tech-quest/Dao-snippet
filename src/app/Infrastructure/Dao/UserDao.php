@@ -13,7 +13,6 @@ final class UserDao
 
     /**
      * コンストラクタ
-     * @param PDO $pdo
      */
     public function __construct()
     {
@@ -38,7 +37,6 @@ final class UserDao
     {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        //sql文を作成
         $sql = sprintf(
             'INSERT INTO %s (name, email, password) VALUES (:name, :email, :password)',
             self::TABLE_NAME
@@ -57,7 +55,6 @@ final class UserDao
      */
     public function findByEmail(string $email): ?array
     {
-        //sql文を作成
         $sql = sprintf(
             'SELECT * FROM %s WHERE email = :email',
             self::TABLE_NAME

@@ -2,9 +2,6 @@
 require_once __DIR__ . '/../app/Infrastructure/Redirect/redirect.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 session_start();
-// var_dump($_SESSION);die;
-// var_dump($_SESSION);die;
-// var_dump($_SESSION['formInputs']['userId']);die;
 if (!isset($_SESSION['formInputs']['userId'])) {
     redirect('./user/signin.php');
 }

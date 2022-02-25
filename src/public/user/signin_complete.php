@@ -21,5 +21,4 @@ if (!password_verify($password, $member['password'])) {
 
 $_SESSION['formInputs']['userId'] = $member['id'];
 $_SESSION['formInputs']['name'] = $member['name'];
-// var_dump($_SESSION);die;
 redirect('../index.php');

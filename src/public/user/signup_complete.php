@@ -15,7 +15,6 @@ if (empty($password) || empty($confirmPassword)) {
 if ($password !== $confirmPassword) {
     $_SESSION['errors'][] = 'パスワードが一致しません';
 }
-
 if (!empty($_SESSION['errors'])) {
     $_SESSION['formInputs']['name'] = $name;
     $_SESSION['formInputs']['email'] = $email;
@@ -23,7 +22,6 @@ if (!empty($_SESSION['errors'])) {
 }
 
 $userDao = new UserDao();
-// メールアドレスに一致するユーザーの取得
 $user = $userDao->findByEmail($email);
 
 if (!is_null($user)) {
@@ -33,8 +31,6 @@ if (!empty($_SESSION['errors'])) {
     redirect('./signup.php');
 }
 
-// ユーザーの保存
 $userDao->create($name, $email, $password);
-
 $_SESSION['message'] = '登録できました。';
 redirect('./signin.php');
